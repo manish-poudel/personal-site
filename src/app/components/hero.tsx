@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
             <span className="text-grey-500">Android Native</span> |{" "}
             <span className="text-grey-500">LLM Apps</span> |{" "}
             <span className="text-grey-500">AI Enthusiast</span> |{" "}
-            <span className="text-grey-500">Web Apps</span>
+            <span className="text-grey-500">Web Application</span>
           </div>
 
           {/* Stylized Quote */}
