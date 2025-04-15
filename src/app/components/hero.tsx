@@ -42,9 +42,9 @@ const Hero: React.FC = () => {
           <div className="text-sm text-gray-400 font-light tracking-wide mt-0">
             <span className="text-grey-50">Flutter</span> |{" "}
             <span className="text-grey-500">Android Native</span> |{" "}
-            <span className="text-grey-500">LLM Apps</span> |{" "}
+            <span className="text-grey-500">LLM apps</span> |{" "}
             <span className="text-grey-500">AI Enthusiast</span> |{" "}
-            <span className="text-grey-500">Web Application</span>
+            <span className="text-grey-500">Web apps</span>
           </div>
 
           {/* Stylized Quote */}
@@ -121,7 +121,7 @@ const Hero: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-transparent to-transparent rounded-full blur-[120px] opacity-10"></div>
             <div className="bg-gray-800 p-1 rounded-full shadow-md">
               <Image
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/manish.png`}
+                src="manish.png"
                 alt="Manish Poudel"
                 width={300}
                 height={300}
