@@ -121,7 +121,7 @@ const Hero: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-transparent to-transparent rounded-full blur-[120px] opacity-10"></div>
             <div className="bg-gray-800 p-1 rounded-full shadow-md">
               <Image
-                src="/manish.png"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/manish.png`}
                 alt="Manish Poudel"
                 width={300}
                 height={300}
