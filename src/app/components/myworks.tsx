@@ -50,20 +50,17 @@ const works = [
 const MyWorks: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Determine the number of items per slide based on screen size
-  const itemsPerSlide = window.innerWidth >= 1024 ? 3 : 1;
-
   // Navigate to the previous set of projects
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? Math.max(works.length - itemsPerSlide, 0) : prevIndex - itemsPerSlide
+      prevIndex === 0 ? works.length - 1 : prevIndex - 1
     );
   };
 
   // Navigate to the next set of projects
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex + itemsPerSlide >= works.length ? 0 : prevIndex + itemsPerSlide
+      prevIndex === works.length - 1 ? 0 : prevIndex + 1
     );
   };
 
@@ -80,12 +77,12 @@ const MyWorks: React.FC = () => {
 
         {/* Projects Grid */}
         <div className="relative flex overflow-hidden">
-          {works.map((work, index) => (
+          {works.map((work) => (
             <div
               key={work.id}
-              className={`flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4 relative transition-transform duration-500 ease-in-out`}
+              className={`flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-4 relative transition-transform duration-500 ease-in-out`}
               style={{
-                transform: `translateX(-${currentIndex * (100 / itemsPerSlide)}%)`,
+                transform: `translateX(-${currentIndex * 100}%)`,
               }}
             >
               {/* Image */}
@@ -99,7 +96,9 @@ const MyWorks: React.FC = () => {
               {/* Title */}
               <h3 className="text-xl font-bold text-white mb-2">{work.title}</h3>
               {/* Description */}
-              <p className="text-gray-300 text-sm mb-4">{work.description}</p>
+              <div className="text-gray-300 text-sm mb-4">
+                {work.description}
+              </div>
               {/* View Project Button */}
               <a
                 href={work.link}
@@ -115,14 +114,12 @@ const MyWorks: React.FC = () => {
 
         {/* Slider Buttons */}
         <div className="absolute top-1/2 -translate-y-1/2 left-4">
-          {currentIndex > 0 && (
-            <button
-              onClick={handlePrev}
-              className="bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition duration-300"
-            >
-              &#8249;
-            </button>
-          )}
+          <button
+            onClick={handlePrev}
+            className="bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition duration-300"
+          >
+            &#8249;
+          </button>
         </div>
         <div className="absolute top-1/2 -translate-y-1/2 right-4">
           <button
