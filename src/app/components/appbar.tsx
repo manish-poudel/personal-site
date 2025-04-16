@@ -4,7 +4,7 @@ const AppBar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center text-white">
         {/* Logo or Name */}
         <h1 className="text-2xl font-bold text-red-500 font-sans">
-          Manish Poudel
+   
         </h1>
 
         {/* Navigation Menu */}
