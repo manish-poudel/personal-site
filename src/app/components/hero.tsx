@@ -3,7 +3,7 @@ import React from "react";
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-screen bg-black text-white flex items-center px-6 overflow-hidden">
+    <section className="relative min-h-screen bg-black text-white flex items-center px-6 overflow-hidden p-2">
       {/* Subtle Particle Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-blue-900 opacity-90"></div>
@@ -70,9 +70,9 @@ const Hero: React.FC = () => {
           {/* Buttons */}
           <div className="flex space-x-4 pt-4">
             <a
-              href="/Manish_Resume.pdf"
+              href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/ManishSharmaPoudel_CV_2025.pdf`}
               download
-              className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-full text-sm font-medium flex items-center space-x-2 transition transform hover:scale-105 shadow-lg font-serif"
+              className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-full text-sm font-medium flex items-center space-x-2 transition transform hover:scale-105 shadow-lg font-sans"
             >
               <span>Download Resume</span>
               <svg
@@ -92,7 +92,7 @@ const Hero: React.FC = () => {
             </a>
             <a
               href="#works"
-              className="border border-white text-white hover:bg-red-600 hover:text-white px-6 py-3 rounded-full text-sm font-medium flex items-center space-x-2 transition transform hover:scale-105 shadow-lg font-serif"
+              className="border border-white text-white   px-6 py-3 rounded-full text-sm font-medium flex items-center space-x-2 transition transform hover:scale-105 shadow-lg font-sans"
             >
               <span>View My Works</span>
               <svg
@@ -121,7 +121,7 @@ const Hero: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-transparent to-transparent rounded-full blur-[120px] opacity-10"></div>
             <div className="bg-gray-800 p-1 rounded-full shadow-md">
               <Image
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/manish.png`}
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/manish.png`}
                 alt="Manish Poudel"
                 width={300}
                 height={300}

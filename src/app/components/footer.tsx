@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Linkedin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-black text-gray-300 py-10  border-t border-b border-gray-700 shadow-lg">
+    <footer id="footer" className="bg-[#0a0d0f] text-gray-300 py-10 border-t border-b border-gray-700 shadow-lg">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
         {/* Contact Section */}
         <div>
@@ -54,12 +54,16 @@ const Footer: React.FC = () => {
               </a>
             </li>
             <li>
-              <a href="#contact" className="hover:underline">
+              <a href="#footer" className="hover:underline">
                 Contact
               </a>
             </li>
             <li>
-              <a href="#resume" className="hover:underline">
+              <a
+                href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/ManishSharmaPoudel_CV_2025.pdf`}
+                download
+                className="hover:underline"
+              >
                 Resume
               </a>
             </li>
@@ -71,9 +75,7 @@ const Footer: React.FC = () => {
           <p className="mb-2">
             &copy; {new Date().getFullYear()} Manish Poudel. All rights reserved.
           </p>
-          <p>
-            Thank you for your visit
-          </p>
+          <p>Thank you for your visit</p>
         </div>
       </div>
     </footer>
