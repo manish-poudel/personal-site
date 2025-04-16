@@ -50,17 +50,20 @@ const works = [
 const MyWorks: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Determine the number of items per slide based on screen size
+  const itemsPerSlide = window.innerWidth >= 1024 ? 3 : 1;
+
   // Navigate to the previous set of projects
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? Math.max(works.length - 3, 0) : prevIndex - 3
+      prevIndex === 0 ? Math.max(works.length - itemsPerSlide, 0) : prevIndex - itemsPerSlide
     );
   };
 
   // Navigate to the next set of projects
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex + 3 >= works.length ? 0 : prevIndex + 3
+      prevIndex + itemsPerSlide >= works.length ? 0 : prevIndex + itemsPerSlide
     );
   };
 
@@ -77,12 +80,12 @@ const MyWorks: React.FC = () => {
 
         {/* Projects Grid */}
         <div className="relative flex overflow-hidden">
-          {works.map((work) => (
+          {works.map((work, index) => (
             <div
               key={work.id}
-              className={`flex-shrink-0 w-1/3 px-8 relative transition-transform duration-500 ease-in-out`}
+              className={`flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4 relative transition-transform duration-500 ease-in-out`}
               style={{
-                transform: `translateX(-${currentIndex * 100}%)`,
+                transform: `translateX(-${currentIndex * (100 / itemsPerSlide)}%)`,
               }}
             >
               {/* Image */}
